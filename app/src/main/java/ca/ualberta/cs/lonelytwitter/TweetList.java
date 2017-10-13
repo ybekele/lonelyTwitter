@@ -12,7 +12,12 @@ public class TweetList {
     public TweetList(){};
 
     public void add(Tweet tweet){
-        tweets.add(tweet);
+        if (hasTweet(tweet)) {
+            throw new IllegalArgumentException("tweet is a duplicate");
+    }
+        else {
+            tweets.add(tweet);
+        }
     }
 
     public boolean hasTweet(Tweet tweet) {
@@ -26,6 +31,14 @@ public class TweetList {
     public Tweet getTweet(int index) {
 
         return tweets.get(index);
+    }
+    public int getCount() {
+        int count = 0;
+        for (int i=0; i < tweets.size(); i++) {
+            count++;
+        }
+        return count;
+
     }
 
 }
