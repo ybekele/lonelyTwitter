@@ -29,6 +29,8 @@ public abstract class Tweet implements Tweetable {
             //Do Something!
             throw new TweetTooLongException();
         }
+        //Unnecessary semicolon ';'
+        //this.message = message;;
         this.message = message;
     }
 
